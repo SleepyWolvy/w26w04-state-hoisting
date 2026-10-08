@@ -25,6 +25,11 @@ function App() {
     )
   }
 
+// 배열에 새로운 카운터 값을 추가 (초기값 0)
+  const onAddCounter = () => {
+    setCounts(prevCounts => [...prevCounts, 0]) 
+  }
+
   // counts 배열의 모든 값을 더함
   const total = counts.reduce((sum, current) => sum + current, 0)
 
@@ -51,6 +56,9 @@ function Counter({ count, onIncrement }) {
   return (
     <div>
       <h1>Counter: {count}</h1>
+      <button onClick={onAddCounter}>
+        카운터 추가
+      </button>
       <button onClick={onIncrement}>
         증가
       </button>
